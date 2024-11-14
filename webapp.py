@@ -10,10 +10,13 @@ app.secret_key=os.environ["SECRET_KEY"]; #This is a variable.
 @app.route("/")
 def render_main():
     return render_template('index.html')
-#@app.route("/p1")
-#def render_page1():
- #   return render_template('page1.html')
-
+@app.route("/page2")
+def render_page1():
+   return render_template('page2.html')
+@app.route("/page3")
+def render_page1():
+   return render_template('page3.html')
+    
 @app.route('/startOver')
 def startOver():
     session.clear() #clears variable values and creates a new session
