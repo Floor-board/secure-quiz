@@ -12,6 +12,7 @@ def render_main():
     return render_template('index.html')
 @app.route("/page2")
 def render_page2():
+   session["start_time"] = time.time()
    return render_template('page2.html')
 @app.route("/page3")
 def render_page3():
