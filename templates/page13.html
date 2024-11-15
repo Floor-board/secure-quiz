@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page2" %}
+
+{% block title %}Question1{% endblock %}
+
+{% block content %}
+
+<h2>What is the first entry on the Pokedex for first gen pokemon</h2>
+<br>
+<form action="/answersOne" method="post">
+  <input type="text" id="Pokemon1" name="Pokemon1">
+  <button type="submit"><a href="/page4">Submit</a></button>
+</form>
+
+{% endblock %}
