@@ -22,6 +22,10 @@ def startOver():
     session.clear() #clears variable values and creates a new session
     return redirect('/')
 
+@app.route('/submit-form', methods=['POST'])
+def handle_form():
+    name = request.form.get('name')
+    email = request.form.get('email')
 
 if __name__=="__main__":
     app.run(debug=False)
