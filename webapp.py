@@ -10,10 +10,10 @@ app.secret_key=os.environ["SECRET_KEY"]; #This is a variable.
 
 @app.route("/")
 def render_main():
-    return render_template('index.html')
+    return render_template('index.html' methods=["GET", "POST"])
 @app.route("/page2")
 def render_page2():
-   return render_template('page2.html')
+   return render_template('page2.html' methods=["GET","POST"])
 @app.route("/page3")
 def render_page3():
    return render_template('page3.html')
