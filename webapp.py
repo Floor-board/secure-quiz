@@ -22,10 +22,9 @@ def startOver():
     session.clear() #clears variable values and creates a new session
     return redirect('/')
 
-@app.route('/submit-form', methods=['POST'])
+@app.route('/answersOne', methods=['POST'])
 def handle_form():
-    name = request.form.get('name')
-    email = request.form.get('email')
+    username = request.form.get('username')
 
 if __name__=="__main__":
     app.run(debug=False)
