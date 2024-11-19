@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set active_page = "page2" %}
+{% set active_page = "page3" %}
 
 {% block title %}Question1{% endblock %}
 
@@ -8,9 +8,9 @@
 
 <h2>What is the first entry on the Pokedex for first gen pokemon</h2>
 <br>
-<form action="/answersOne" method="post">
+<form action="/answersTwo" method="post">
   <input type="text" id="Pokemon1" name="Pokemon1">
-  <button type="submit"><a href="/page4">Submit</a></button>
+  <button type="submit">Submit</button>
 </form>
 
 {% endblock %}
