@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% set active_page = "page4" %}
+
+{% block title %}Question1{% endblock %}
+
+{% block content %}
+
+<h2>What was the first pokemon created?</h2>
+<br>
+<form action="/answersFour" method="post">
+  <input type="text" id="Pokemon4" name="Pokemon4">
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
