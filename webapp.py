@@ -29,7 +29,6 @@ def render_page6():
    return render_template('page6.html')
 @app.route("/page7")
 def render_page7():
-   session['end_time'] = end.time()
    return render_template('page7.html')
 
 @app.route('/startOver')
@@ -58,19 +57,41 @@ def handle_form3():
 
 @app.route('/answersFour', methods=['GET', 'POST'])
 def handle_form4():
-    if "answer3" not in session:  
-        session["answer3"]=request.form['Pokemon3']
+    if "answer4" not in session:  
+        session["answer4"]=request.form['Pokemon3']
     return render_template('page6.html')
 
-@app.route('/answersFour', methods=['GET', 'POST'])
+@app.route('/answersFive', methods=['GET', 'POST'])
 def handle_form5():
-    if "answer4" not in session:  
-        session["answer4"]=request.form['Pokemon4']
+    if "answer5" not in session:  
+        session["answer5"]=request.form['Pokemon4']
+    score = 0
+    session['end_time'] = time.time()
+    Ti = session['start_time']
+    Tf = session['end_time']
+    time1 = Tf - Ti
     if session["answer2"] == "Bulbasour" or session["answer2"] == "bulbasour":
         awns2 = "Correct"
-    elif session["answer3"] == "Ivysour" or session["answer3"] == "ivysour":
+        score = score+1
+    else:
+        awns2= "Incorrect"
+    if session["answer3"] == "Ivysaur" or session["answer3"] == "ivysaur":
         awns3 = "Correct"
-    return render_template('page7.html', awnser2 = awns2, awnser3 = awns3)
+        score = score+1
+    else:
+        awns3 = "Incorrect"
+    if session["answer4"] == "Mew" or session["answer4"] == "mew":
+        awns4 = "Correct"
+        score = score+1
+    else:
+        awns4 = "Incorrect"
+    if session["answer5"] == "Rhydon" or session["answer5"] == "rhydon":
+        awns5 = "Correct"
+        score = score+1
+    else:
+        awns5 = "Incorrect"
+    percent = score / 4 * 100
+    return render_template('page7.html', awnser2 = awns2, awnser3 = awns3, awnser4 = awns4, awnser5 = awns5, awnsTrue = score, Percent = percent, Time = time1)
 
 
 
